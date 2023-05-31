@@ -26,9 +26,9 @@ function getAchievements(userId = 2, gameId) {
     let result = [];
     for (let achievementList of achievementLists) {
         if (achievementList.classList.value.includes('secret')) {
-            secrets = prepareAchievements(achievementList.children);
+            secrets = secrets.concat(prepareAchievements(achievementList.children));
         } else {
-            achievements = prepareAchievements(achievementList.children);
+            achievements = achievements.concat(prepareAchievements(achievementList.children));
         }
     }
 
